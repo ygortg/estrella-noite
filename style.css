@@ -1,0 +1,415 @@
+/* Reset e estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.bannerButton {
+    text-decoration: none;
+    color: #0d0f1a;
+}
+
+body {
+    font-family: 'Poppins', 'Montserrat', 'Raleway', sans-serif;
+    background-color: #0d0f1a;
+    color: #d1d1e0;
+}
+
+/* Cabeçalho */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(15, 15, 25, 0.8);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    color: #ffe600;
+    font-weight: bold;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+header nav ul li a {
+    color: #d1d1e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #ffe600;
+}
+
+/* Banner */
+.banner {
+    height: 100vh;
+    background: url('image/banner.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #ffe600;
+    border: none;
+    color: #0d0f1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0.2rem;
+}
+button:hover {
+    background-color: #ffcc00;
+}
+
+#home .bg-black > h1 {
+    font-size: 2rem;
+}
+
+.bg-black{
+    background: url('image/bg_barfogo_black100.png') no-repeat center center / cover;
+    height: 100vh;
+    width: 45%;
+    padding: 16rem 0;
+    line-height: 5rem;
+}
+
+/* Sobre nós */
+.about, .menu, .events {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.about {
+    background-color: #1c1e40;
+}
+.about h2, .menu h2, .events h2 {
+    color: #ffe600;
+}
+
+/* Galeria de Menu */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.gallery .item {
+    width: 30%;
+    height: 40vh;
+    background-color: #333356;
+    color: #d1d1e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery .item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 230, 0, 0.8);
+}
+
+#item1{
+    background: url(image/bebida.jpg) no-repeat center center / cover;
+}
+#item2{
+    background: url(image/bebida2.jpg) no-repeat center center / cover;
+}
+#item3{
+    background: url(image/bebida3.jpg) no-repeat center center / cover;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Modal escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #1c1e40;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #d1d1e0;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #ffe600;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #ffe600;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ffcc00;
+}
+
+/* Modal */
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-modal-content {
+    background-color: #1c1e40;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #d1d1e0;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.menu-modal-content h3 {
+    text-align: center;
+    color: #ffe600;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.menu-modal-content .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.menu-modal-content .menu-list li {
+    display: flex;
+    align-items: center;
+    background-color: #2a2c41;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-modal-content .menu-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+}
+
+.drink-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 230, 0, 0.5);
+}
+
+.drink-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.drink-details strong {
+    color: #ffe600;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.drink-details p {
+    font-size: 0.9rem;
+    color: #d1d1e0;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #ffe600;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ffcc00;
+}
+
+
+
+/* Estilização da seção de eventos */
+.events {
+    padding: 4rem 2rem;
+    background-color: #1c1e40;
+    color: #d1d1e0;
+    text-align: center;
+}
+
+.events h2 {
+    color: #ffe600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: #333356;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.3);
+}
+
+.event-banner img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+}
+
+.event-description {
+    text-align: center;
+    max-width: 100%;
+}
+
+.event-description h3 {
+    color: #ffe600;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #d1d1e0;
+}
+
+
+/* Rodapé */
+footer {
+    background: #0d0f1a;
+    color: #d1d1e0;
+    padding: 2rem 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    color: #ffe600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #d1d1e0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #d1d1e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffe600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+}
